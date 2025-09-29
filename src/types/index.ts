@@ -1,5 +1,5 @@
 // Re-export all types from data files
-export type { PersonalInfo, SocialLink } from "@/data/personal";
+export type { PersonalInfo } from "@/data/personal";
 export type { Project } from "@/data/projects";
 export type { Startup } from "@/data/startups";
 
