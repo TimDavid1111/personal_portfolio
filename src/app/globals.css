@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Reset default margins and padding */
+* {
+	box-sizing: border-box;
+	overscroll-behavior: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Full height sections with smooth scrolling */
+html {
+	scroll-behavior: smooth;
+	scroll-snap-type: y proximity;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+/* Main sections - full height with gentle snap assistance */
+#about,
+#startups,
+#projects {
+	height: 100vh;
+	scroll-snap-align: start;
+	scroll-snap-stop: normal;
+}
+
+/* Connect section special handling - bar style */
+#connect {
+	height: auto;
+	min-height: auto;
+	scroll-snap-align: start;
+	scroll-snap-stop: normal;
+}
+
+/* Ensure proper display for full height sections */
+.full-height {
+	height: 100vh;
+	min-height: 100vh;
+}
+
+/* Shine animation for buttons */
+@keyframes shine {
+	0% {
+		transform: translateX(-100%) skewX(-15deg);
+	}
+	100% {
+		transform: translateX(200%) skewX(-15deg);
+	}
+}
+
+.animate-shine {
+	animation: shine 0.6s ease-out;
+}
+
+/* Smooth section fade-in animations */
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeOutDown {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-15px);
+	}
+}
+
+.section-fade-in {
+	animation: fadeInUp 0.52s ease-out forwards;
+}
+
+.section-fade-out {
+	animation: fadeOutDown 0.4s ease-in forwards;
+}
+
+.section-hidden {
+	opacity: 0;
+	transform: translateY(15px);
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* Card hover expansion and bluish-gray border */
+.card-hover {
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+	transform: scale(1.1);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	border-color: #94a3b8;
+}
